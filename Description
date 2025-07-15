@@ -1,0 +1,30 @@
+-- Table: employees
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(100),
+    region VARCHAR(50),
+    joining_date DATE
+);
+
+-- Table: targets
+CREATE TABLE targets (
+    emp_id INT,
+    month YEAR_MONTH,
+    target_value DECIMAL(10,2),
+    PRIMARY KEY (emp_id, month)
+);
+
+-- Table: performance
+CREATE TABLE performance (
+    emp_id INT,
+    month YEAR_MONTH,
+    achieved_value DECIMAL(10,2),
+    PRIMARY KEY (emp_id, month)
+);
+
+-- Table: incentives
+CREATE TABLE incentives (
+    achievement_percent_min INT,
+    achievement_percent_max INT,
+    incentive_percent DECIMAL(5,2)
+);
